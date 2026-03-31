@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Grid & @supports</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #fafafa;
+    }
+
+    h2 {
+      margin-top: 40px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    /* Grid Intro */
+    .grid-intro {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 10px;
+      background: #ddd;
+      padding: 10px;
+    }
+    .grid-intro > div {
+      background: steelblue;
+      color: rgb(199, 187, 187);
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Grid Columns & Rows */
+    .grid-cols-rows {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 100px 200px;
+      gap: 10px;
+    }
+    .grid-cols-rows > div {
+      background: coral;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Grid Container */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+    .grid-container > div {
+      background: darkslateblue;
+      color: white;
+      padding: 30px;
+      font-size: 1.2rem;
+    }
+
+    /* Grid Items */
+    .grid-item {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .grid-item > div {
+      background: seagreen;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .grid-item .span-2 {
+      grid-column: span 2;
+    }
+    .grid-item .row-span {
+      grid-row: span 2;
+    }
+
+    /* @supports */
+    .supports-demo {
+      padding: 20px;
+      background: pink;
+      margin-top: 20px;
+    }
+    @supports (display: grid) {
+      .supports-demo {
+        background: lightgreen;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Grid and @supports Examples</h1>
+
+  <h2>1️⃣ Grid Intro</h2>
+  <div class="section grid-intro">
+    <div>1</div><div>2</div><div>3</div>
+    <div>4</div><div>5</div><div>6</div>
+  </div>
+
+  <h2>2️⃣ Grid Columns & Rows</h2>
+  <div class="section grid-cols-rows">
+    <div>1</div><div>2</div><div>3</div><div>4</div>
+  </div>
+
+  <h2>3️⃣ Grid Container</h2>
+  <div class="section grid-container">
+    <div>A</div><div>B</div><div>C</div>
+  </div>
+
+  <h2>4️⃣ Grid Item Span</h2>
+  <div class="section grid-item">
+    <div>1</div>
+    <div class="span-2">2 spans 2 columns</div>
+    <div class="row-span">3 spans 2 rows</div>
+    <div>4</div><div>5</div>
+  </div>
+
+  <h2>5️⃣ CSS @supports</h2>
+  <div class="section supports-demo">
+    <div>This browser supports Grid!</div>
+    <div>✅ Modern Layout</div>
+  </div>
+
+</body>
+</html>

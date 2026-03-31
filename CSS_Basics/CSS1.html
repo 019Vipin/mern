@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      padding: 20px;
+    }
+    .box {
+      width: 100%;
+      padding: 20px;
+      background-color: lightgreen;
+      text-align: center;
+      font-size: 24px;
+    }
+    /* 📱 Small screens (Mobile) */
+    @media screen and (max-width: 600px) {
+      body {
+        background-color: #fce4ec;
+      }
+      .box {
+        background-color: hotpink;
+        font-size: 18px;
+      }
+    }
+    /* 💻 Medium screens (Tablet) */
+    @media screen and (min-width: 601px) and (max-width: 1024px) {
+      body {
+        background-color: #e3f2fd;
+      }
+      .box {
+        background-color: steelblue;
+        font-size: 20px;
+      }
+    }
+    /* 🖥 Large screens (Desktop) */
+    @media screen and (min-width: 1025px) {
+      body {
+        background-color: #e8f5e9;
+      }
+      .box {
+        background-color: seagreen;
+        font-size: 24px;
+      }
+    }
+   .responsive-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .responsive-box {
+    flex: 1 1 200px;
+    background: lightblue;
+    padding: 20px;
+    text-align: center;
+    min-width: 200px;
+  }
+    .flex-container {
+      display: flex;
+      background-color: #ddd;
+      padding: 20px;
+      gap: 20px;
+    }
+    .flex-item {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      flex: 1; /* all items take equal space */
+    }
+    .float-box {
+      float: left;
+      width: 200px;
+      height: 150px;
+      background-color: lightblue;
+      margin-right: 20px;
+    }
+    .cleared-box {
+      clear: both;
+      background-color: lightgreen;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    .overflow-box {
+      width: 300px;
+      height: 100px;
+      background-color: lightcoral;
+      overflow: auto;
+      padding: 10px;
+    }
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+      html {
+      font-size: 16px; /* 1rem = 16px */
+    }
+    .px-box {
+      width: 300px;
+      height: 100px;
+      background-color: lightblue;
+      margin-bottom: 10px;
+    }
+    .percent-box {
+      width: 50%;
+      height: 100px;
+      background-color: lightgreen;
+      margin-bottom: 10px;
+    }
+    .em-box {
+      font-size: 2em; /* 2 × parent (16px) = 32px */
+      background-color: pink;
+      padding: 1em; /* 32px padding */
+      margin-bottom: 10px;
+    }
+    .rem-box {
+      font-size: 1.5rem; /* 1.5 × 16px = 24px */
+      background-color: peachpuff;
+      padding: 1rem; /* 16px */
+      margin-bottom: 10px;
+    }
+    .viewport-box {
+      width: 50vw; /* 50% of viewport width */
+      height: 20vh; /* 20% of viewport height */
+      background-color: lightcoral;
+    }
+      .box {
+      width: 200px;
+      height: 100px;
+      color: white;
+      padding: 10px;
+    }
+    .static-box {
+      position: static;
+      background-color: gray;
+    }
+    .relative-box {
+      position: relative;
+      left: 30px;
+      top: 10px;
+      background-color: blue;
+    }
+    .absolute-container {
+      position: relative; /* Make it a reference for absolute */
+      height: 200px;
+      background-color: lightgray;
+      margin-top: 20px;
+    }
+    .absolute-box {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: red;
+    }
+    .fixed-box {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: green;
+      z-index: 10;
+    }
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      background-color: orange;
+      padding: 10px;
+    }
+    body {
+      height: 1500px;
+      font-family: Arial, sans-serif;
+    }
+      .block-example {
+      display: block;
+      background-color: lightblue;
+      margin-bottom: 50px;
+    }
+    .inline-example {
+      display: inline;
+      background-color: lightgreen;
+      padding: 5px;
+    }
+    .inline-block-example {
+      display: inline-block;
+      width: 150px;
+      height: 50px;
+      background-color: orange;
+      margin: 5px;
+      text-align: center;
+      line-height: 50px;
+    }
+    .hidden {
+      display: none;
+    }
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #ddd;
+    }
+    caption {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+     /* Unordered List Styles */
+    ul {
+      list-style-type: square;  /* Default is disc, changed to square */
+      padding-left: 20px;
+      font-size: 18px;
+      color: darkgreen;
+    }
+    /* Ordered List Styles */
+    ol {
+      list-style-type: upper-roman;  /* I, II, III... */
+      padding-left: 20px;
+      font-size: 18px;
+      color: darkblue;
+    }
+    a:link {
+      color: blue;
+    }
+    a:visited {
+      color: purple;
+    }
+    a:hover {
+      color: green;
+      text-decoration: underline;
+    }
+    a:active {
+      color: red;
+    }
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      font-style: italic;
+    }
+    div {
+      background-image: url("background.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left;
+      margin: 100px 150px 200px 250px;
+      border: 1px dashed #000;
+      padding: 10px 20px;
+      height: 200px;
+      width: 300px;
+    }
+    p {
+      border: 1px dotted #000;
+      border-radius: 10px;
+      font-family: Verdana;
+      font-size: 20px;
+      outline-color: blue;
+      outline-style: dashed;
+      outline-width: 3px;
+      outline-offset: 5px;
+      color: darkblue;
+      text-align: center;
+      text-decoration: underline;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: red;
+      text-align: center;
+    }
+    .intro {
+      color: green;
+    }
+    #main-heading {
+      font-size: 30px;
+    }
+    /* This is a single-line comment */
+  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <h1>My First CSS Example</h1>
+  <p>This is a paragraph.</p>
+  <p class="intro">This is styled with a class</p>
+  <h1 id="main-heading">This is styled with an ID</h1>
+  <p style="color: red;">Red Text</p>
+
+  <div>
+    <p>This paragraph is inside a styled div.</p>
+  </div>
+  
+  <i class="fas fa-user"></i> User  
+  <i class="fas fa-envelope"></i> Email
+  
+  <a href="https://www.google.com" target="_blank">Visit Google</a>
+  <a href="https://www.wikipedia.org" target="_blank">Visit Wikipedia</a>
+  <a href="https://www.github.com" target="_blank">Visit GitHub</a>
+  <a href="page.html">Visit Internal Page</a>
+  
+  <h2>Unordered List (Fruits)</h2>
+  <ul>
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Mango</li>
+    <li>Orange</li>
+  </ul>
+
+  <h2>Ordered List (Top 3 Books)</h2>
+  <ol>
+    <li>Mahabharata</li>
+    <li>Ramayana</li>
+    <li>Bhagavad Gita</li>
+  </ol>
+  
+   <table>
+    <caption>Student Marks</caption>
+    <thead>
+      <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Math</th>
+        <th>Science</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>101</td>
+        <td>Utkarsh</td>
+        <td>95</td>
+        <td>90</td>
+        <td>185</td>
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Ravi</td>
+        <td>88</td>
+        <td>84</td>
+        <td>172</td>
+      </tr>
+      <tr>
+        <td>103</td>
+        <td>Anjali</td>
+        <td>92</td>
+        <td>89</td>
+        <td>181</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h1>CSS Display Property Demo</h1>
+  <h2>Block Element</h2>
+  <div class="block-example">This is a block element</div>
+  <h2>Inline Elements</h2>
+  <span class="inline-example">Inline 1</span>
+  <span class="inline-example">Inline 2</span>
+  <h2>Inline-Block Elements</h2>
+  <div class="inline-block-example">Box 1</div>
+  <div class="inline-block-example">Box 2</div>
+  <div class="inline-block-example">Box 3</div>
+  <h2>Hidden Element (Not Visible)</h2>
+  <p class="hidden">You can't see me!</p>
+  
+   
+  <h1 class="sticky-box">Sticky Heading</h1>
+  <div class="box static-box">Static (default)</div>
+  <div class="box relative-box">Relative (moved from normal spot)</div>
+  <div class="absolute-container">
+    <div class="box absolute-box">Absolute (inside container)</div>
+  </div>
+  <div class="box fixed-box">Fixed (always visible)</div>
+  <p>Scroll down to see how <strong>sticky</strong> and <strong>fixed</strong> behave.</p>
+  
+    <h1>CSS Units Example</h1>
+  <div class="px-box">Fixed size (300px)</div>
+  <div class="percent-box">50% of parent width</div>
+  <div class="em-box">Font size: 2em (relative to self)</div>
+  <div class="rem-box">Font size: 1.5rem (relative to root)</div>
+  <div class="viewport-box">50vw wide, 20vh tall</div>
+  
+    <h1>Float, Clear, and Overflow</h1>
+  <div class="float-box">I am floated left</div>
+  <p>This text wraps around the floated box. You can use floats to align images, sidebars, or small containers alongside text.</p>
+  <div class="cleared-box">I cleared the float using <code>clear: both</code>. Now I appear below the floated element.</div>
+  <h2>Overflow Example</h2>
+  <div class="overflow-box">
+    This content is long enough that it overflows the box. When overflow is set to <code>auto</code>, scrollbars appear if necessary.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a erat at lacus tincidunt...
+  </div>
+  
+   <h1>Flex Container Example</h1>
+  <div class="flex-container">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+  </div>
+  
+  <div class="responsive-container">
+  <div class="responsive-box">Box 1</div>
+  <div class="responsive-box">Box 2</div>
+  <div class="responsive-box">Box 3</div>
+  <div class="responsive-box">Box 4</div>
+</div>
+
+  <div class="box">
+    Resize the browser window to see Media Queries in action!
+  </div>
+
+</body>
+</html>

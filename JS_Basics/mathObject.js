@@ -1,0 +1,12 @@
+console.log(Math.E);
+console.log(Math.PI);
+console.log(Math.LOG2E);
+console.log(Math.round(12.79)); 
+console.log(Math.round(12.49));  
+console.log(Math.ceil(12.79)); 
+console.log(Math.floor(12.79)); 
+console.log(Math.random());
+console.log(Math.min(10,12)); 
+console.log(Math.max(10,12)); 
+console.log(Math.pow(2,10)); 
+console.log(Math.round(Math.random() * (100 - 40)) + 40);

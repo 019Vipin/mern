@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Visual Effects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f5f5f5;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .border-img {
+      border: 15px solid transparent;
+      border-image: url('https://www.w3schools.com/css/border.png') 30 round;
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .background-box {
+      background-image: url('https://www.w3schools.com/css/img_tree.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .color-box {
+      background-color: #ffcccb;
+      color: #333;
+    }
+
+    .keyword-color-box {
+      background-color: goldenrod;
+      color: navy;
+    }
+
+    .gradient-box {
+      background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Advanced Visual Effects</h1>
+
+  <div class="section border-img">
+    1️⃣ Border Image Example
+  </div>
+
+  <div class="section background-box">
+    2️⃣ Background Image Example
+  </div>
+
+  <div class="section color-box">
+    3️⃣ CSS Color with HEX Example
+  </div>
+
+  <div class="section keyword-color-box">
+    4️⃣ CSS Color Keywords Example
+  </div>
+
+  <div class="section gradient-box">
+    5️⃣ Gradient Background Example
+  </div>
+
+</body>
+</html>
