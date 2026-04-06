@@ -79,3 +79,86 @@ head.parentNode.parentNode.addEventListener('click',function(event){
     alert("target = " + event.target.tagName + ", this=" + this.tagName);
 });
 // Sequence - span , h1 , div 
+
+
+/*
+Phase	    Order
+Capturing	DIV → H1 → SPAN
+Bubbling	SPAN → H1 → DIV
+*/
+
+//capturingPhase.js
+let head1 = document.querySelector('#head');
+head.addEventListener('click',function(event){
+    alert("target = " + event.target.tagName + ", this=" + this.tagName);
+},{capture:true});
+
+head.parentNode.addEventListener('click',function(event){
+    alert("target = " + event.target.tagName + ", this=" + this.tagName);
+    head.parentNode.parentNode.style.backgroundColor = 'aliceblue';
+},{capture:true});
+
+head.parentNode.parentNode.addEventListener('click',function(event){
+    alert("target = " + event.target.tagName + ", this=" + this.tagName);
+},{capture:true});
+// Sequence - div,  h1, span
+
+
+//eventObject.js
+head = document.getElementById('head');
+head.addEventListener('click', function(event) {
+    console.log(event);
+    console.log(event.target);
+    console.log(event.target.tagName);
+});
+
+
+//preventDefault.js
+let link = document.getElementById('link');
+link.addEventListener('click',function(e)
+{
+    e.preventDefault();
+});
+
+
+//avoidTooManyEvents.js
+// create 100 paragraphs and apply on it events
+// for(let  i = 1; i <= 100; i++)
+// {
+//     let paragraph = document.createElement('p');
+
+//     let content = document.createTextNode(`This is ${i} paragraph`);
+
+//     paragraph.appendChild(content);
+
+//     paragraph.addEventListener('click', function(){
+//         alert(`This is ${i} paragraph Clicked`);
+//     })
+//     document.body.appendChild(paragraph);
+// }
+
+let parentDiv = document.createElement("div");
+parentDiv.addEventListener("click", function (event) {
+  if(event.target.nodeName === 'P')
+  {
+    alert(event.target.textContent);
+  }
+});
+for (let i = 1; i <= 100; i++) {
+  let paragraph = document.createElement("p");
+
+  let content = document.createTextNode(`This is ${i} paragraph`);
+
+  paragraph.appendChild(content);
+  parentDiv.appendChild(paragraph);
+}
+
+document.body.appendChild(parentDiv);
+
+
+//colorH2.js
+let heading = document.querySelectorAll('h2');
+heading.forEach((element) => {
+    element.style.background = 'green';
+    element.style.color = 'yellow';
+});
