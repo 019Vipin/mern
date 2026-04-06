@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navbar Example</title>
+
+    <style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: blue;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .nav-left a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        .nav-left a:hover {
+            text-decoration: underline;
+        }
+
+        .disabled {
+            color: gray;
+            pointer-events: none;
+        }
+
+        .search-box input {
+            padding: 5px;
+        }
+
+        /* Container */
+        .container {
+            padding: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        /* Shadows */
+        .no-shadow {
+            box-shadow: none;
+        }
+
+        .small-shadow {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .regular-shadow {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .large-shadow {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Badge */
+        .badge {
+            background-color: red;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: #2f8d46;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="nav-left">
+        <a href="#">Home</a>
+        <a href="#">Link</a>
+        <a href="#">Dropdown</a>
+        <a href="#" class="disabled">Disabled</a>
+    </div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+    </div>
+</div>
+
+<!-- Content -->
+<div class="container">
+
+    <h2>Example heading <span class="badge">New</span></h2>
+    <h2>Example heading <span class="badge">New</span></h2>
+    <h2>Example heading <span class="badge">New</span></h2>
+
+    <p><strong>Active</strong></p>
+    <p>Link</p>
+    <p class="disabled">Disabled</p>
+
+    <!-- Card -->
+    <div class="card regular-shadow">
+        <h3>Special title treatment</h3>
+        <p>With supporting text below as a natural lead-in to additional content.</p>
+        <button class="btn">Button</button>
+    </div>
+
+    <!-- Insert positions demo -->
+    <div class="card small-shadow">
+        <p><strong>Before Begin</strong></p>
+        <p><strong>After Begin</strong></p>
+        <p>This is Para</p>
+        <p><strong>Before End</strong></p>
+        <p><strong>After End</strong></p>
+    </div>
+
+    <!-- Shadow Examples -->
+    <div class="card no-shadow">No shadow</div>
+    <div class="card small-shadow">Small shadow</div>
+    <div class="card regular-shadow">Regular shadow</div>
+    <div class="card large-shadow">Larger shadow</div>
+
+</div>
+
+</body>
+</html>
